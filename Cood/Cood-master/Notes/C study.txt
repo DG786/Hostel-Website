@@ -1,0 +1,107 @@
+#Classes - OOP
+attributes & behavior are vars & functions
+private vs protected : both forbid the use of members, but they differ in 
+**Structures don't have inheritence, polymorphism, virtual functions.
+
+**Class is mere a blueprint or a template. No storage is assigned when we define a class. 
+Class in C++ are similar to structures in C, the only difference being, class defaults to private access control, where as structure defaults to public
+
+//Use of pointer objects- to change value of the vars from another function by passing the reference.
+//Also in fns with return type pointer : a = pinto(); This way our function has ended, but we have the reference to the value stored.
+
+**Static members(even the privates) can be accessed without any object (coz they are the same for every object.) static int a; ... int Car::c=0;
+//Use of OOP : 
+#Inheritence goes well for extending the library.
+    Defined with 'is a' relation in them. class2 : public class1 {};
+** if class2: private class1{}; this will make all accessible things private.
+    Child cannot know the parent's private data, but its fns CAN USE PRIVATE data.
+    $tatic Bindings :	It will bind the definition of fns going moving up in the hierarchy i.e. within the class where x() is defnd,
+    $ Dynamic binding : virtual void y() // It will keep it dependent on the object , will be defined when in RUNTIME. 
+**Polymorphism- Write the function again & again & 
+
+\ The functions in child class if with same name, will call the fn in BASE CLASS FIRST.
+**To use appropriate functions, we can use virtual functions
+
+Errors - use exit to end the PROGRAM
+
+#Stacks- are used generally by taking inputs in an array & stacking the array elements.
+
+/*Linked list is Stack + pop/add from end also.
+Queue lets you add at the head & remove from head. This one makes full use of space, except for 1 blank.
+
+    Stack *t; //this is not object, its just the pointer to its object. SO CONSTRUCTOR WON'T RUN NOW,!
+    t1= new Stack(); //Given a memory to this single object.
+    int *b,*c; //this will disprove int* a vs int *a.
+
+#Queues-
+
+//First come first serve in stack,
+//Queue needs 2 pointers coz growing from both ends. Queue is Head+1 to Tail.
+//This requires a circular arrangement,coz tail shall not exceed size of the array. which is achieved by MOD !
+//This will also utilise all allocated space.
+
+    // "Camelcase" notation is used to build this. So that others can quickly use ur syntax.
+    
+//See linked list gets heavy when node is removed at tail in terms of time. Requires going thru each element of the linked list. Coz no link backward.
+//Stack - memory issues : if we have a backward link.
+//KIM that the stack lib in C++ has isEmpty's false exchanged with true.
+//we wrote there the Stack form of linked list.
+
+
+#Q1 : read by prefix -
+//int a ='4'-'2';// will make it 2 coz their ascii is continous.
+//(int)'2' will give its char
+
+
+
+#4 Stacks in computer architecture.
+//using return exit when array overflow/ Stack overflow, OR stack underflow.
+
+	functions in Stack- Push(in new value) or Pop(out the top value)
+			Implemented in [Link lists] & Arrays.
+Arrays- We add a value to the next address & the pointer(of array) <moves> to the new value address.
+
+
+
+/*
+
+#Arrays & Pointers :
+a³ = b²
+Use of pointers-
+1. using single variable to manipulate multiple vars. by *, **,etc
+2. Allows arrays of user defined size i.e. Dynamic Array. by*/
+using malloc,etc.
+int arr2[10][10]; //To make this thru pointers
+int **bp2;
+bp2= (int**)malloc(sizeof(int*)*10); //array of 10 pointers.
+
+
+3. Pointer to a pointer variable (declare by int** a, where a is int* b;
+
+//malloc(40) is a memory block. (int*) is what the type of pointer which will point to the integer blocks.
+//stores the first address, gets the others by jumping 4 (sizeof(int)) locations.
+
+
+
+
+#1 Time complexity
+    //Big O
+    //Assume for a very large input.
+    // If both are proportional to xsquare,
+    
+    
+//each node taking O(1)- constant(n^0) time, n instr take O(n);
+//Tree in powers of 2 n=>n/2=>...=>2=>1
+// n=2^k; k =log2(n)+1 This is no. of levels in the tree
+
+
+//Power function
+2^10 = 2^5*2^5
+Pow(a,0)=1;
+Pow(a,n)=Pow(a,n/2)*Pow(a,n/2)	 if n is even;
+Pow(a,n)=Pow(a,n/2)*Pow(a,n/2)*a if n is odd;
+
+
+ 	Time taking-
+	 O(1) is stated to tell a constant
+	Not calling it twice, make a copy & multiply in one call. gives T(n)=T(n/2)+O(1)

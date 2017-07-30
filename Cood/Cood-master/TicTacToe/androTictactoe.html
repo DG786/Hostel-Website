@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="file:///sdcard/Testasset/jquery.min.js"></script>
+	<title>Tic Tac Toe</title>
+</head>
+<body>
+
+	<h1>Tic Tac Toe Checker</h1>
+	<h2 id="player"> Current Player : </h2><br>
+	<div id="buttons"> </div>
+	<br>&emsp;&emsp;&emsp;<button onclick="reset ()">Reload</button>
+
+
+	<script>
+	var defText="Current Player : ";
+	var winnerText="Winner is : Player ";
+	var drawText="Its a Draw !";
+	var defBut=" ";
+	var space=" &emsp;&emsp;";
+	var curr_player = 1; //initialize on reload
+	
+	//Initialize - updatePlayer &  make Grid
+reset ();
+function reset (){
+ curr_player = 1
+	updatePlayer(); 
+$('#buttons').html(' '); //remove buttons
+	for(var i=1;i<=9;i++){
+		var buttons = ' <input style="height:50px;width:50px;font-size:30px;" type="button" id="'+i+'" value="'+defBut+'" onclick="toggle(this.id)"/> ';
+		if(i%3==0)buttons+='<br><br>';
+		$('#buttons').html($('#buttons').html()+space+buttons);
+	}
+}
+	function updatePlayer(){
+		$('#player').html(defText + curr_player);
+	}
+	function toggle(id){
+		var button=$('#'+id); 
+		if(!(button.val()==defBut))return false; //do nothing once set.
+		var p=curr_player,symbol="NA";
+		symbol=(p==1)?"O":"X";
+		button.val(symbol);
+		curr_player=(p%2+1); //update player 
+		updatePlayer();
+		check(symbol);
+	}
+	function disableButtons(){
+		var buttons=document.getElementsByTagName('input');
+		for(var i=0;i<buttons.length;i++)buttons[i].disabled="true";
+	}
+function check(symbol){
+		//vertical
+		var allChecks = [
+		["1","4","7"],["2","5","8"],["3","6","9"], //verticals
+		["1","5","9"],["3","5","7"], //diagonals
+		["1","2","3"],["4","5","6"],["7","8","9"], //horizontals
+		];
+		var inputs=[];
+		for(var i=0;i<allChecks.length;i++){ //traverse allChecks array
+			var val1=$('#'+allChecks[i][0]).val(); 
+			var val2=$('#'+allChecks[i][1]).val(); 
+			var val3=$('#'+allChecks[i][2]).val(); 
+			if(val1==val2 && val2==val3 && val3 !=defBut && val3 == symbol){
+				disableButtons();
+				var player= (symbol=="O")?1:2;
+				$('#player').html(winnerText + player);
+				return;
+			}
+		}
+		
+		var flag=1;
+		for(var i=1;i<=9;i++){ //traverse
+			if($('#'+i).val()==defBut)flag=0; //don't disable if defBut remain
+		}
+		if(flag==1){
+			$('#player').html(drawText);
+			disableButtons();
+			return;
+		}
+	} 
+	
+	</script>
+</body>
+</html>

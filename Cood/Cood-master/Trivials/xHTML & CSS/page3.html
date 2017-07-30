@@ -1,0 +1,106 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="My.css"/>
+<!-- //<link  type="text/javascript" href="My.js"/>** Maynot work, try. then use script src -->
+<link  type="text/html" href="page1.html"/>
+<!-- Add link rel in head ! KIM -not put in style -->
+<!-- Add obj in head not body. KIM the Comma & ; -->
+<script type="text/javascript">	
+a={name:"This JS text is printed thru quick-object i.e. using bo={prop1:23,prop2:'Hi'};",age:34}; 
+function fn1(digit){alert("You wrote :" + digit);}
+function Objset(a,b,c){this.a=a;this.b=b;this.c=c;} 
+var MyObj = new Objset(1,29,"<br/> 'Image above'");
+document.write(a.name+"<br/>"+"<img title='Dont Hover me!' src='images/1.jpg' height=17%/>") // WoRks ! just KIM no "" inside " "
+<!-- KIM that subfolder/img.jpg has no \ or / at start. -->
+
+document.write(MyObj.c+"<br/>")
+/*
+function time(){
+<!-- Problem with FF. In chrome also the webpage is gone. -->
+var DateObj = new Date();
+document.write(DateObj.getHours()+":"+DateObj.getMinutes()+":"+DateObj.getSeconds()+"<br/>");
+}setInterval("time()",1000);
+ */</script>
+</head>
+
+
+<body onload=""> 
+<!-- Code defined below,still worksabove. -->
+<table style="background-color:#092309" border=1>
+
+<tr>
+<td>Blank To USe</td>
+<th colspan=3>HeadRow</th>
+</tr>
+<tr><th rowspan=3>Col Head</th>
+<td><p id="s2" ><bdo dir="rtl" style="font-family:verdana" > BULLSHIT</bdo></p></td><td ><p>Normal styled para R3C1</p></td></tr>
+<tr>
+
+<!--Formatting <b>for para </b>class -->
+<td style="background-color:black"><p class="class2">
+Formatting <b>for para </b>class
+<i> i is for italic</i><br/>
+<mark> Mark is highlight </mark><br>
+<small> & small is small font.</small><br/>
+There is a <del>strike</del> <ins>del</ins> tag for strikethrough,<br/>
+<ins> ins tag for undL..</ins><br/>
+2<sub>2<sub>2<sup>2<sub>2<sup>2<sup>2</sup></sup></sup></sub></sub> </sub> sub sup Can go multitimes.
+<h1>Cl<sup>35.5</sup><sub> <sub style="text-allign:centre">17</sub></sub> </h1>
+</p></td>
+
+<!-- Form in a table -->
+<td><form style="font-family:cursive" title="Form Area" action="http://localhost/test/test.php" name="form1" method = "post"> 
+<bdo dir="rtl">Hello</bdo> I am a form.<br/>
+<span style="font-family:western" >name is the id & value is either default or sent backend. here: </span><br/> 
+DblClck for onselect UserName : <input id="goNext" type="text"title="UserName" size="20" maxlength=8 name="usern" placeholder="Type username here..." onselect="alert('Yo')"> <br/>
+
+<script>
+var n=document.getElementById("goNext");
+console.log(n.value);
+</script>
+
+<div id="Right30">
+Radio1 1-  <input type="radio" name="radi1"><br>
+ <input type="email"   name="email" value="a@b.com" >
+ Password : <input type="password" name="pwrd" value="Typesas" onfocus="alert('Focussed')" > <br/>
+<!-- /*  
+Try Changing Email :    <input type="email"  name="email" value="Type email here..." onchange="alert('Yo')"></div> <br/>
+<hr/><a href="#" onmouseout="" onmouseover=" " onclick="fn1('click')" >
+<mark style="background-color:coral;">Power ful response- color/popup/alert/background data</mark></a>
+<br/><fieldset><legend>Radio Legend</legend>
+Radio1 1-  <input type="radio" name="radi1" disabled checked>
+Radio1 2 - <input type="radio" name="radi1"> <br/>
+Radio2 1 - <input type="radio" name="radi2" > 
+Radio2 2 - <input type="radio" name="radi2"> <br/>
+Check Me:  <input type="checkbox" name="chkbox"> <br/><br/>
+</fieldset>
+The "Browse..." is from browser: 
+<!-- <input type="file" name="fle"> <br/> -->
+<!-- How to take this file input /- Submit takes all data in a form tag -->
+<!-- Button !-<input type="button" title="i run code" style="color:green;"value="ClickMe!" name="button" onclick="D()"> <br/>  
+<select multiple size=0 name="drpdwn" onblur="alert('Gonse')"> Try Ctrl Click to select many.
+<option value="1">This issa</option>
+<optgroup label="Option Group1">
+<option value="4">Thisssa is</option>
+<option value="5" label="MyOption5">Thissfa is</option>
+<option value="6" selected disabled>Dropdown</option></optgroup>
+<option value="3">Menu</option></select><br/>
+<textarea readonly onblur="alert('I see you clicked outside')" value="Type email here..." style="font-family:fantasy; background-color:#000000; color:lightgreen;"  name="textarea" rows=5 cols=50> 
+The readonly text. Textarea requires name,cols & rows IN TERMS OF CHARACTERS !          and this counts spaces 
+as well as ENTERS !But,html cods like "<br/>" DNW here </b></textarea><br/> -->
+Submit  !-<input type="submit" title="Take all form1" value="Submit value" name="submit" onsubmit="D()" > <br/>
+Submit  !-<input type="image" src="3.jpg" title="Taake all form1" alt="WorkSubmit" width=48px name="isub" onsubmit="D()" > <br/>
+  </form>
+ 
+ <!-- Just after ,/form> the js shall collect it -->
+<script type="text/javascript">
+var F= document.form1; //copy object to small name.
+var L=F.length,t=0;
+document.write('No. of elements : '+L+"<BR>");
+function D(){while(t<L){var U= F.elements[t];
+document.write(U.name+'-<br> Size:'+U.size +" Type: "+U.type+", Checked :"+U.checked+" "+"<BR><br>")
+;t++;}}
+ </script>
+</td>
+</tr>
+</body>
+</html>

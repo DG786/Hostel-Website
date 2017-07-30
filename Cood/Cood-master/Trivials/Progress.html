@@ -1,0 +1,21 @@
+<html>
+<head>
+<title> Investor Interface</title>
+</head>
+<body>
+
+<div style="position:absolute;left:35%;top:45%">
+<p style="background-color:black;width:500px;height:20px"></p>
+</div>
+<div style="position:absolute;left:35%;top:45%" >
+<p id="prog" style="background-color:red;width:20px;height:20px"></p>
+</div>
+
+<script>
+var progress=document.getElementById("prog");
+progress.innerHTML="Script WORKING";
+function raise(x){var l=parseInt(progress.style.width);if(l<500)progress.style.width=l+x;}
+var rate=50;
+setInterval("raise(rate)",100);
+</script>
+</body></html>

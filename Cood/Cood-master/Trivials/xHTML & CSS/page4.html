@@ -1,0 +1,53 @@
+<!doctype html><html>
+<HEAD>
+<script type="text/javascript">
+var Arr1 = new Array();
+//Arr1[0]= prompt("Type in your Name","");document.write('Hi '+Arr1[0]+',<br>');
+
+function makearr(){var p=0,y;
+while(y!='n'){y =prompt("Type Something in...(n to stop)","n"); 
+<!-- if(y!='n'){Arr1[p]=y;}  -->
+<!-- Arr1[p]=y; -->
+Arr1.push(y);
+p++;} Arr1.pop();}
+makearr();
+
+function N(){document.write('You gave : ');var t=0;
+while(t<Arr1.length){document.write("'"+Arr1[t]+"' , "); t++;}
+document.write('<BR> Which on Joining & bdo-reversing gives : ' + Arr1.join('')+"~|~<bdo dir='rtl'>"+Arr1.join('')+"</bdo> <BR>");
+
+document.write(' Reversed by .reverse use: ' + Arr1.reverse());
+document.write('<BR> Sorted alphabetically : ' + Arr1.sort());
+}
+N();
+
+/*
+setInterval('time()',1000);
+<!-- Array is an OBJECT of the Array(a1,a2,...) fn. -->
+
+Also try event handlers.
+Two cool things- 
+var/obj defn very easy w/o data type. BUT THIS CHANGES DATA TYPE AUTOMATICALLY IF REDIFINED DIFFERENTLY
+Math needs no lib to incl, KIM the M & P I be capital in Math.PI
+
+KIM: No "" b/w " "
+
+Get- More Math methods, inbuilt fns in js to make OBJ, more conditions like onClick,
+*/
+
+</script> </head>
+<body><br/>
+<iframe id="Time" align="centre" src="3.jpg">  </iframe>
+<a target="Time" href="page2.html" title="Try the frameset !"> How it worked for vid ! in iframe</a>
+
+<script type="text/javascript">
+time();
+<!-- We can use a in body too. -->
+function time(){var DateObj = new Date(); var x=DateObj.getHours();
+document.write('<br> Time : '+Math.abs(12-DateObj.getHours())+":"+DateObj.getMinutes()+":"+DateObj.getSeconds());
+if((x-12)<0){document.write(' AM'+"<br>");}
+else{document.write(' PM'+"<br>");}
+}
+ </script> 
+</body>
+ </html>

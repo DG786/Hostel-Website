@@ -1,0 +1,15 @@
+p.class1 {color: #aa0000;}
+.class2 {color:grey;}
+#Right30 {position:relative; left:30;}
+p:first-line{line-height:100%;}
+p {text-indent:10px; margin:15px; color:yellow;background-color: black;font-family:Comic Sans Ms;}
+p#s2 {color:blue;font-family:Times New Roman;}
+p>b{color:pink;font-weight:normal; margin:1px;}
+table{font-family:sans-serif;}
+body{background-color: black;color:white;}
+
+a:link {color:orange;} a:visited {color:b;background-color:black;}
+h1 { color:green;background-color: black; font-family:Comic Sans Ms;}
+span {color: #2cf340; border: 1px dotted grey; padding-top:2px;font-family: Arial;}
+ul{list-style-type:katakana; }
+#div1 {color:orange;border:2px dotted red;position:relative;top: 10%;}

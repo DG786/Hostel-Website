@@ -1,0 +1,4 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["YFSsr"]); }
+
+__d('legacy:dom',['DOM'],function a(b,c,d,e,f,g){if(c.__markCompiled)c.__markCompiled();b.DOM=c('DOM');},3);
+__d('AppRequestReminders',['AsyncRequest','CSS','DOM','ge'],function a(b,c,d,e,f,g){if(c.__markCompiled)c.__markCompiled();var h=0,i={},j=1,k=c('ge')('OtherAppReqReminder'),l=function(r,s,t){i[s]={node:r,seq:j++,reqCount:t};},m=function(r){h=r;},n=function(r){return r.id.split('_')[1];},o=function(r){var s=c('ge')(r),t=s.nextSibling;if(t!==k){c('CSS').show(t);h-=i[n(t)].reqCount;}p(h);},p=function(r){new (c('AsyncRequest'))().setURI('/ajax/reminders/update_count.php').setData({new_count:r}).setMethod('POST').send();},q=function(r,s){if(k&&s&&r>0){c('DOM').setContent(c('ge')('OtherAppReqLabel'),s);}else if(k){c('CSS').hide(k);}else c('CSS').hide(c('ge')('OtherAppReqReminder'));};g.initNode=l;g.handleRemove=o;g.updateCount=q;g.setTotalOtherCount=m;},null);

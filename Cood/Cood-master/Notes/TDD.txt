@@ -1,0 +1,39 @@
+TEST DRIVEN DEVELOPEMENT
+
+#Testing - Always imp : for visualising what to write next
+
+#3 rules of TDD -
+	RED -Don't write any line of ode until you have a failing test case. //To debug in GREEN MODE immediately.
+	GREEN -Make minimum changes(replace ifs by loops, return n by null,etc.) in the line to pass those changes.
+
+	REFACTORING -Simplify stuff after writing the code & don't add new logic anymore.
+**Whenever you seem to use (Ctrl+d) or (Ctrl+V), look for Refactoring.
+**Always have a fallback option when you remove something. (Keep all test cases running everytime you remove it)
+
+VVIMP :**After writing every new line, you shall explicitly see the code fail. (It might happen that code somehow handles it.)
+
+#Benefits
+1.No Rotten code.
+2.The application works in real time, you build the base, then add features modularly.
+3.The test cases are your documentation of its working.
+
+#Rotten Code- unmaintainable code, has no test cases to support(while making changes)
+
+#Blackbox testing,Whitebox testing - knowing or not knowing the code.
+
+#Stress,performance,load testing - similar
+#Regression testing- Check after a change or update.
+
+	$$ #Unit testing - testing at the lowest(minute) level. Add so many cases one by one.
+
+
+#Coverage - no of lines tested atleast once.
+
+DRY,YAGNI,KISS,WET.
+
+#HW- without altering the input array, make sorted array, (will end up in quicksort)
+
+
+
+**New Add/Find- 
+friend breaks your code, you patch it again & vice versa.

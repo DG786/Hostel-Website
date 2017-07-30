@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+#moveMe {
+    position: absolute;
+}
+</style>
+<div id=1>Hel</div>
+
+<div id='moveMe'>
+<div style="position:relative; left: -70px;top:-80px">
+<img src="./flame.gif" width=220px height=220px/>
+</div>
+</div>
+
+<script>
+
+var count=0;
+var h=2; //height of each div
+document.onmousemove = function(e){
+var X=e.clientX
+var Y=e.clientY;
+var coord="Coords: "+X+" "+ Y;
+document.getElementById('1').innerHTML=coord;
+var move=document.getElementById("moveMe");
+move.style.left =X+"px";
+move.style.top =Y+"px";
+move.style.cursor="none"
+
+
+var div = move.innerHTML;
+div= document.createElement("div");
+div.style.height = h+"px";
+div.style.background = count%2?"red":"orange";
+var countMax=window.screen.height/h;
+var scale=window.screen.width/countMax;
+
+//TODO : MAKE THIS SMOOTH, & with less MEMORy.
+div.style.width = 10+count*scale+"px";
+
+if(count<countMax){
+setTimeout(function() {document.body.appendChild(div);count++;},50);
+}
+setTimeout(function() {document.body.removeChild(div);count--;},2000);
+}
+
+
+
+</script>
+
+</body>
+</html>

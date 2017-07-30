@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+<td>&nbsp;
+<img class="alignleft" src="${2:imgurl}" width="60" height="60" /> 
+<a href="${1:appurl}">${3:appTitle}</a>
+${4:desc}
+</td>
+
+]]></content>
+<tabTrigger>app</tabTrigger>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+	

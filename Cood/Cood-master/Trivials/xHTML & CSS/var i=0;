@@ -1,0 +1,12 @@
+function Do(){var x=document.activeElement;
+var elements=document.forms[0].elements; 
+var i=0,l=elements.length;
+for(i=0;i<l;i++){if(elements[i]==x)break;}
+var limit=1;i = position of element//
+if(i<2)limit=10;
+if(i>7&&i<14)limit=2;
+if(x.value.length>=limit){
+//alert(1);
+elements[i+1].focus();}}
+
+setInterval("Do()",1000);

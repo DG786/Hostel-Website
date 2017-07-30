@@ -1,0 +1,8 @@
+<!doctype = html>
+<html>
+<head><title> Press Ctrl Shift I</title></head>
+
+<body>
+<img src="hostel.jpg" />
+</body>
+</html>

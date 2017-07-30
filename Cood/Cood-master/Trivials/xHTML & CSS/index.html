@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head> 
+<style type="text/css">h3 {text-ident :25px;}
+body { background-image:url("1.jpg");background-repeat:no-repeat;}</style>
+<title>☻☺♥♦</title>
+<meta name="viewport" content="width=device-width, initial-scale=10" > 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+//this must stay empty when script src included. BOOTSTRAP JOBS !
+</script>
+</head>
+<body>
+
+	<div id="Sido" >
+
+		<div id="sidebar-wrapper"> 
+			<ul class="sidebar-nav"><!-- This shall hide it -->
+				<li>My item 1</li>
+				<li>My item 2</li>
+			</ul>
+		</div>
+
+	<!-- Page content : contd till end. So put this at top. -->
+		<div id="Page">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12"><!-- //12 for full web content -->
+						<a href="#" class= "btn btn-success" id="menu"> Toggle Side</a>
+						
+							<h6>Using CSS- Cascading Style Sheet. </h6>
+							<h1> Bold, biggest header1</h1>
+							<h3>Do I have 4 spaces ? Nope, No spaces more than one counted ! </h3>
+							<p> Paragraph in normal font </p>
+							<p> </p> <!-- My comment for blank para
+							<p>Hey,p leaves a blank line on next line. While br goes Enter<br /> Am I to next line ?</p>
+							-->
+							<ul><li>Item1</li>THis is without a bullet coz no li used<li>Item2</li><li>40Sixty</li></ul>
+							<ol><li>Steps to</li><li>Fish around</li><li>Under the sun</li></ol>
+							<h4> Go to Page2 ? <a accesskey="p" href="page2.html"><kbd style="font-size=2" >Alt+Shift+P</kbd></a></h4>
+														
+							REFRESH ? <a href="index.html"> Page 1 </a>
+							<br />
+							<a href="page3.html">New Page WIP</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<script> 
+&("#menu").click(function(e){ //selector. ref in Jquery.
+	e.preventDefault();// This prevents the default event of the element clicked i.e. href="#" of 'a' here.
+	&("#Sido").toggleClass("toggled");//This will add this attribute to the div, even if it doesn't have it.
+	//This is reference to div by id. We can do many things using this!
+	&("#Page").toggleClass("Toggled");
+});
+</script> 
+
+</body>
+
+</html>

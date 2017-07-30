@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-cookie.js"></script>
+	<title>Tic Tac Toe</title>
+</head>
+<body>
+
+	<h1>Tic Tac Toe Checker</h1>
+	<h2 id="player"> Current Player : </h2><br>
+	<div id="buttons"> </div>
+	<br>&emsp;&emsp;&emsp;<button onclick="Initialize()">Reset</button>
+	<br>&emsp;&emsp;&emsp;<button onclick="simulateCheck('O')">Check O</button>
+
+	<script>
+	var defText="Current Player : ";
+	var winnerText="Winner is : Player ";
+	var drawText="Its a Draw !";
+	var emptyBut=" ";
+	var space=" &emsp;&emsp;";
+	var curr_player = 1; //initialize on reload
+	var allChecks = [
+		["1","4","7"],["2","5","8"],["3","6","9"], //verticals
+		["1","5","9"],["3","5","7"], //diagonals
+		["1","2","3"],["4","5","6"],["7","8","9"], //horizontals
+		];
+		var moveDelay=500;
+
+	//Initialize - updatePlayer &  make Grid
+	Initialize();
+	function Initialize(){
+		curr_player = 1;
+		updatePlayer();
+		$('#buttons').html(' ');
+		for(var i=1;i<=9;i++){
+			var buttons = ' <input style="height:50px;width:50px;font-size:30px;" type="button" id="'+i+'" value="'+emptyBut+'" onclick="toggle(this.id)"/> ';
+			if(i%3==0)buttons+='<br><br>';
+			$('#buttons').html($('#buttons').html()+space+buttons);
+		}
+	}
+
+	function updatePlayer(){
+		$('#player').html(defText + curr_player);
+	}
+	function toggle(id){
+		var button=$('#'+id); 
+		if(!(button.val()==emptyBut))return false; //do nothing once set.
+		var p=curr_player,symbol="NA";
+		symbol=(p==1)?"O":"X";
+		button.val(symbol);
+		curr_player=(p%2+1); //update player 
+		updatePlayer();
+		check(symbol);
+
+	}
+
+	function disableButtons(){
+		var buttons=document.getElementsByTagName('input');
+		for(var i=0;i<buttons.length;i++)buttons[i].disabled="true";
+	}
+
+//determines if its a draw or sure win on defensive play.
+function simulateCheck(symbol){
+//The curr_player places thee mark whenever there is one "empty" in the allChecks array, but first they want to win before they defend.
+
+// var player= (symbol=="O")?1:2;
+
+for(var i=0;i<allChecks.length;i++){ //traverse allChecks array
+
+	var vals=[],emptyNos=0,ofCurrPlayer=1,emptyIndex=-1;
+
+		for(var j=0;j<allChecks[i].length;j++){ //fill in current values
+			vals[j]=$('#'+allChecks[i][j]).val(); 
+			if(vals[j]==emptyBut){
+				emptyNos++;
+				emptyIndex=j; //above might get redundant
+			}
+			if(vals[j]!=symbol)ofCurrPlayer=0;
+		}
+
+		if(emptyNos==1){ //make move when there is "only one" empty
+			var makeMove=1,key=emptyIndex==0?vals[1]:vals[0];
+			//decide to makeMove
+			for(var j=0;j<vals.length;j++)
+				if(j!=emptyIndex && vals[j]!=key)makeMove=0;
+
+			if(makeMove==1){
+				//makeMove at emptyIndex
+				toggle(allChecks[i][emptyIndex]);
+				//wait for time to show player
+				// setTimeout(function(){while(1);},moveDelay);
+
+				if(ofCurrPlayer==1){//do Own move first.
+					//id of emptyIndex
+					// break; //this Break will EXIT OUTERMOST LOOP !
+				}
+				else{
+					//wait if any other loop detects ofCurrPlayer
+				}
+			}
+		}
+		else {
+				//may be make random move
+				//or return nothing i.e. remove this block.
+			}
+
+		}
+	}
+
+	function check(symbol){
+		for(var i=0;i<allChecks.length;i++){ //traverse allChecks array
+			var val1=$('#'+allChecks[i][0]).val(); 
+			var val2=$('#'+allChecks[i][1]).val(); 
+			var val3=$('#'+allChecks[i][2]).val(); 
+			if(val1==val2 && val2==val3 && val3 !=emptyBut && val3 == symbol){
+				console.log("Win due to positions in ",allChecks[i]);
+				disableButtons();
+				var player= (symbol=="O")?1:2;
+				$('#player').html(winnerText + player);
+				return;
+			}
+		}
+
+		var flag=1;
+		for(var i=1;i<=9;i++){ //traverse
+			if($('#'+i).val()==emptyBut)flag=0; //don't disable if emptyBut remain
+		}
+		if(flag==1){
+			$('#player').html(drawText);
+			disableButtons();
+			return;
+		}
+
+	}
+
+	
+	</script>
+</body>
+</html>
